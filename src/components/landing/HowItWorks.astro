@@ -1,0 +1,109 @@
+---
+const { content } = Astro.props;
+---
+
+<section id="how-it-works" class="how-it-works">
+  <div class="container">
+    <div class="header">
+      <h2>{content.title}</h2>
+      <p>{content.subtitle}</p>
+    </div>
+    
+    <div class="steps">
+      {content.steps.map((step: any, index: number) => (
+        <>
+          <div class="step">
+            <div class="step-number">{step.number}</div>
+            <h3>{step.title}</h3>
+            <p>{step.description}</p>
+          </div>
+          {index < content.steps.length - 1 && <div class="divider"></div>}
+        </>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .how-it-works {
+    padding: 6rem 2rem;
+    background: #f7f8fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+    color: #65676b;
+  }
+  
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: start;
+  }
+  
+  .step {
+    text-align: center;
+  }
+  
+  .step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #0095f6 0%, #0080d9 100%);
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+  }
+  
+  .step h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .step p {
+    font-size: 0.95rem;
+    color: #65676b;
+  }
+  
+  .divider {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #0095f6 50%, transparent);
+  }
+  
+  @media (max-width: 768px) {
+    .how-it-works {
+      padding: 4rem 1rem;
+    }
+    
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+    
+    .divider {
+      display: none;
+    }
+  }
+</style>

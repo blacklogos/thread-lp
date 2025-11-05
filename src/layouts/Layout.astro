@@ -1,0 +1,203 @@
+---
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+}
+
+const baseURL = Astro.site?.href || 'https://threadtohtml.com';
+const { title = "Thread to HTML - Convert Threads to Beautiful HTML", description = "Convert Twitter/X Threads to embeddable HTML instantly. Perfect for blogs, portfolios, and documentation.", image = "/og-image.png", canonicalURL = new URL(Astro.url.pathname, baseURL) } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="theme-color" content="#f7f8fa" />
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={image} />
+    
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    
+    <style is:global>
+      :root {
+        --primary: #0095f6;
+        --background: #f7f8fa;
+        --text-primary: #000;
+        --text-secondary: #65676b;
+        --border: #e5e7eb;
+        --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+      
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      html {
+        scroll-behavior: smooth;
+      }
+      
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
+        color: var(--text-primary);
+        background: var(--background);
+        line-height: 1.6;
+      }
+      
+      h1, h2, h3, h4, h5, h6 {
+        font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        font-weight: 700;
+      }
+      
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        line-height: 1.2;
+      }
+      
+      h2 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
+        line-height: 1.3;
+      }
+      
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        line-height: 1.4;
+      }
+      
+      p {
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        color: var(--text-secondary);
+      }
+      
+      code {
+        font-family: "JetBrains Mono", monospace;
+        background: #f0f2f5;
+        padding: 0.25rem 0.5rem;
+        border-radius: 4px;
+      }
+      
+      a {
+        color: var(--primary);
+        text-decoration: none;
+        transition: opacity 0.2s;
+      }
+      
+      a:hover {
+        opacity: 0.8;
+      }
+      
+      button, input, textarea, select {
+        font-family: inherit;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="sticky-nav">
+      <div class="nav-container">
+        <a href="/" class="logo">Thread to HTML</a>
+        <div class="nav-links">
+          <a href="#how-it-works">How It Works</a>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+        </div>
+        <a href="https://chrome.google.com/webstore" class="cta-button" target="_blank" rel="noopener noreferrer">
+          Add to Chrome
+        </a>
+      </div>
+    </nav>
+    
+    <main>
+      <slot />
+    </main>
+    
+    <style>
+      .sticky-nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+        padding: 1rem 2rem;
+      }
+      
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2rem;
+      }
+      
+      .logo {
+        font-weight: 700;
+        font-size: 1.25rem;
+        color: var(--text-primary);
+      }
+      
+      .nav-links {
+        flex: 1;
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+      
+      .nav-links a {
+        color: var(--text-secondary);
+        transition: color 0.2s;
+      }
+      
+      .nav-links a:hover {
+        color: var(--primary);
+      }
+      
+      .cta-button {
+        background: var(--primary);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 8px;
+        font-weight: 600;
+        white-space: nowrap;
+        transition: all 0.2s;
+      }
+      
+      .cta-button:hover {
+        opacity: 0.9;
+        transform: translateY(-2px);
+      }
+      
+      @media (max-width: 768px) {
+        .nav-container {
+          gap: 1rem;
+          padding: 0.5rem;
+        }
+        
+        .nav-links {
+          display: none;
+        }
+      }
+    </style>
+  </body>
+</html>

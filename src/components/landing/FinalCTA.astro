@@ -1,0 +1,106 @@
+---
+---
+
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to Convert Your Threads?</h2>
+    <p>Join thousands of creators who are already using Thread to HTML</p>
+    
+    <div class="ctas">
+      <a href="https://chrome.google.com/webstore" class="primary-cta" target="_blank" rel="noopener noreferrer">
+        Add to Chrome – It's Free
+      </a>
+      <a href="https://github.com" class="secondary-cta" target="_blank" rel="noopener noreferrer">
+        Star on GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .final-cta {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #0095f6 0%, #0080d9 100%);
+    color: white;
+    text-align: center;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    margin-bottom: 1rem;
+    color: white;
+  }
+  
+  p {
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 2rem;
+  }
+  
+  .ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .primary-cta, .secondary-cta {
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+    white-space: nowrap;
+  }
+  
+  .primary-cta {
+    background: white;
+    color: #0095f6;
+  }
+  
+  .primary-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  }
+  
+  .secondary-cta {
+    background: transparent;
+    color: white;
+    border: 2px solid white;
+  }
+  
+  .secondary-cta:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  @media (max-width: 768px) {
+    .final-cta {
+      padding: 4rem 1rem;
+    }
+    
+    h2 {
+      font-size: 1.75rem;
+    }
+    
+    p {
+      font-size: 1rem;
+    }
+    
+    .ctas {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .primary-cta, .secondary-cta {
+      width: 100%;
+      max-width: 300px;
+    }
+  }
+</style>

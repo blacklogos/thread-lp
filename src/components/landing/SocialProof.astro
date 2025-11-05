@@ -1,0 +1,103 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="social-proof">
+  <div class="container">
+    <div class="header">
+      <h2>Loved by Creators</h2>
+      <p>See what real users say about Thread to HTML</p>
+    </div>
+    
+    <div class="testimonials">
+      {content.map((testimonial: any) => (
+        <div class="testimonial">
+          <div class="avatar">{testimonial.avatar}</div>
+          <blockquote>{testimonial.quote}</blockquote>
+          <cite>
+            <strong>{testimonial.name}</strong>
+            <span>{testimonial.role}</span>
+          </cite>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .social-proof {
+    padding: 6rem 2rem;
+    background: white;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+    color: #65676b;
+  }
+  
+  .testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial {
+    background: linear-gradient(135deg, #f7f8fa 0%, #fff 100%);
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .avatar {
+    font-size: 3rem;
+    line-height: 1;
+  }
+  
+  blockquote {
+    font-style: italic;
+    color: #000;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  cite {
+    font-style: normal;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.85rem;
+    color: #65676b;
+  }
+  
+  cite strong {
+    color: #000;
+  }
+  
+  @media (max-width: 768px) {
+    .social-proof {
+      padding: 4rem 1rem;
+    }
+    
+    .testimonials {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

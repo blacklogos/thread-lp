@@ -1,0 +1,102 @@
+---
+const { content } = Astro.props;
+---
+
+<section id="problems" class="problems">
+  <div class="container">
+    <div class="header">
+      <h2>{content.title}</h2>
+      <p>{content.subtitle}</p>
+    </div>
+    
+    <div class="grid">
+      {content.items.map((item: any) => (
+        <div class="card">
+          <div class="icon">{item.icon}</div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .problems {
+    padding: 6rem 2rem;
+    background: #f7f8fa;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+    color: #65676b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  .card {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .card:hover {
+    border-color: #0095f6;
+    box-shadow: 0 12px 32px rgba(0, 149, 246, 0.1);
+    transform: translateY(-4px);
+  }
+  
+  .icon {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+  
+  .card h3 {
+    margin: 0;
+  }
+  
+  .card p {
+    margin: 0;
+    font-size: 0.95rem;
+  }
+  
+  @media (max-width: 768px) {
+    .problems {
+      padding: 4rem 1rem;
+    }
+    
+    .header {
+      margin-bottom: 2rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  }
+</style>

@@ -1,0 +1,106 @@
+---
+const { content } = Astro.props;
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-content">
+      <div class="branding">
+        <h3>Thread to HTML</h3>
+        <p>{content.tagline}</p>
+      </div>
+      
+      <div class="links">
+        {content.links.map((link: any) => (
+          <a href={link.href}>{link.label}</a>
+        ))}
+      </div>
+    </div>
+    
+    <div class="divider"></div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 Thread to HTML. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    background: #1a1a1a;
+    color: #e5e7eb;
+    padding: 4rem 2rem 2rem;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 4rem;
+    align-items: start;
+    margin-bottom: 2rem;
+  }
+  
+  .branding h3 {
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+  
+  .branding p {
+    color: #9ca3af;
+    font-size: 0.9rem;
+    margin: 0;
+  }
+  
+  .links {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+  
+  .links a {
+    color: #e5e7eb;
+    transition: color 0.2s;
+  }
+  
+  .links a:hover {
+    color: #0095f6;
+  }
+  
+  .divider {
+    height: 1px;
+    background: #374151;
+    margin-bottom: 2rem;
+  }
+  
+  .copyright {
+    text-align: center;
+  }
+  
+  .copyright p {
+    font-size: 0.85rem;
+    color: #9ca3af;
+    margin: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .footer {
+      padding: 3rem 1rem 1rem;
+    }
+    
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+    
+    .links {
+      justify-content: flex-start;
+      gap: 1rem;
+    }
+  }
+</style>

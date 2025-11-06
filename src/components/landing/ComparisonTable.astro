@@ -1,5 +1,6 @@
 ---
-const { content } = Astro.props;
+import ComparisonSlider from '../ComparisonSlider';
+const { content, comparisonViews } = Astro.props;
 ---
 
 <section class="comparison">
@@ -9,28 +10,7 @@ const { content } = Astro.props;
       <p>{content.subtitle}</p>
     </div>
     
-    <div class="table-wrapper">
-      <table>
-        <thead>
-          <tr>
-            {content.headers.map((header: any) => (
-              <th>{header}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {content.rows.map((row: any) => (
-            <tr>
-              {row.map((cell: any, index: number) => (
-                <td class={index === 0 ? "feature" : ""}>
-                  {cell}
-                </td>
-              ))}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <ComparisonSlider views={comparisonViews} client:load />
   </div>
 </section>
 

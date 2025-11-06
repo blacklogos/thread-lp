@@ -1,0 +1,180 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="live-preview">
+  <div class="container">
+    <div class="header">
+      <h2>{content.title}</h2>
+      <p>{content.subtitle}</p>
+    </div>
+    
+    <div class="preview-content">
+      <p class="description">{content.description}</p>
+      
+      <form class="preview-form">
+        <div class="form-group">
+          <input 
+            type="text" 
+            placeholder="Paste thread URL or paste thread text here..."
+            aria-label="Thread URL or text"
+          />
+          <button type="submit" data-track="live-preview-convert">
+            Convert
+          </button>
+        </div>
+      </form>
+      
+      <div class="preview-box">
+        <div class="placeholder">
+          <div class="icon">✨</div>
+          <p>Converted HTML will appear here</p>
+          <code>&lt;div class="thread"&gt; ... &lt;/div&gt;</code>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .live-preview {
+    padding: 6rem 2rem;
+    background: linear-gradient(135deg, #f7f8fa 0%, #fff 100%);
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+  
+  .header h2 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .header p {
+    font-size: 1.125rem;
+    color: #65676b;
+  }
+  
+  .preview-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .description {
+    text-align: center;
+    color: #65676b;
+    font-size: 1rem;
+  }
+  
+  .preview-form {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .form-group {
+    display: flex;
+    gap: 0.5rem;
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.2s;
+    min-height: 44px;
+  }
+  
+  input:focus {
+    outline: none;
+    border-color: #0095f6;
+    box-shadow: 0 0 0 3px rgba(0, 149, 246, 0.1);
+  }
+  
+  button {
+    padding: 0.75rem 2rem;
+    background: #0095f6;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    min-height: 44px;
+  }
+  
+  button:hover {
+    background: #0084d9;
+    transform: translateY(-2px);
+  }
+  
+  button:focus {
+    outline: 2px solid #0095f6;
+    outline-offset: 2px;
+  }
+  
+  .preview-box {
+    background: white;
+    border: 2px dashed #0095f6;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    min-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .placeholder {
+    text-align: center;
+    color: #9ca3af;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .placeholder p {
+    margin: 0 0 1rem 0;
+    font-size: 1rem;
+  }
+  
+  .placeholder code {
+    background: #f7f8fa;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-block;
+    font-size: 0.85rem;
+  }
+  
+  @media (max-width: 768px) {
+    .live-preview {
+      padding: 4rem 1rem;
+    }
+    
+    .form-group {
+      flex-direction: column;
+    }
+    
+    input,
+    button {
+      width: 100%;
+    }
+    
+    .preview-box {
+      padding: 2rem 1rem;
+      min-height: 200px;
+    }
+  }
+</style>

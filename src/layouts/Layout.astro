@@ -246,6 +246,19 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
           }
         }
       });
+
+      // Track video plays
+      const videos = document.querySelectorAll('video');
+      videos.forEach(video => {
+        video.addEventListener('play', () => {
+          if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'video_play', {
+              category: 'engagement',
+              label: video.id || 'embedded_video'
+            });
+          }
+        });
+      });
     });
   </script>
 </html>

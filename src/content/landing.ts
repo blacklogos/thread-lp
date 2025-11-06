@@ -186,6 +186,151 @@ export const landingContent = {
     }
   ],
   
+  techHighlights: {
+    title: "Built with Modern Tech",
+    subtitle: "Powered by cutting-edge technologies for speed and reliability",
+    items: [
+      {
+        icon: "⚡",
+        name: "Astro",
+        description: "Ultra-fast static site generation with islands architecture"
+      },
+      {
+        icon: "⚛️",
+        name: "React",
+        description: "Interactive components only where needed for optimal performance"
+      },
+      {
+        icon: "🔒",
+        name: "TypeScript",
+        description: "Type-safe code for reliable, maintainable applications"
+      },
+      {
+        icon: "🎨",
+        name: "Tailwind CSS",
+        description: "Utility-first CSS for rapid, responsive design"
+      },
+      {
+        icon: "📊",
+        name: "Google Analytics",
+        description: "Comprehensive user behavior tracking and insights"
+      },
+      {
+        icon: "🌐",
+        name: "Open Source",
+        description: "Transparent, community-driven development for long-term trust"
+      }
+    ]
+  },
+
+  gallery: {
+    title: "See It In Action",
+    subtitle: "Real examples of threads beautifully transformed to HTML",
+    items: [
+      {
+        before: "🐦 Raw Twitter thread with formatting lost in copy-paste",
+        after: "✨ Perfect HTML with all styling, links, and media preserved",
+        category: "Tech Discussion"
+      },
+      {
+        before: "📱 Mobile screenshot hard to embed in documents",
+        after: "🔗 Responsive HTML works on any device and CMS",
+        category: "Learning Content"
+      },
+      {
+        before: "😞 Thread deleted but you need the content",
+        after: "💾 HTML archive keeps the content forever",
+        category: "Knowledge Preservation"
+      },
+      {
+        before: "❌ Cannot embed in newsletter or blog platform",
+        after: "✅ Works everywhere - blogs, newsletters, portfolios",
+        category: "Content Repurposing"
+      }
+    ]
+  },
+
+  featureTabs: {
+    title: "Advanced Features",
+    subtitle: "Choose the right tool for your workflow",
+    tabs: [
+      {
+        title: "Conversion",
+        icon: "🔄",
+        description: "Lightning-fast thread-to-HTML conversion with perfect formatting",
+        features: [
+          "One-click conversion with right-click context menu",
+          "Batch convert multiple threads at once",
+          "Auto-detect and preserve reply chains",
+          "Smart media extraction and optimization"
+        ]
+      },
+      {
+        title: "Privacy",
+        icon: "🔒",
+        description: "Your data stays with you, always. No tracking, no storage",
+        features: [
+          "100% local processing - nothing sent to servers",
+          "No user data collection or analytics",
+          "Open-source code auditable by anyone",
+          "Works offline after first load"
+        ]
+      },
+      {
+        title: "Export",
+        icon: "💾",
+        description: "Multiple export formats for maximum compatibility",
+        features: [
+          "Export as clean, self-contained HTML",
+          "Generate Markdown for any platform",
+          "Copy-to-clipboard ready to paste anywhere",
+          "Download as standalone HTML file"
+        ]
+      },
+      {
+        title: "Customization",
+        icon: "🎨",
+        description: "Make it yours with flexible styling options",
+        features: [
+          "Light and dark mode themes",
+          "Custom color palettes",
+          "Font and spacing adjustments",
+          "Brand your embedded content"
+        ]
+      }
+    ]
+  },
+
+  livePreview: {
+    title: "Live Preview",
+    subtitle: "Try the conversion magic right here",
+    description: "Paste a thread URL or thread text below to see how it transforms into beautiful HTML"
+  },
+
+  comparisonViews: [
+    {
+      view: "Method",
+      data: [
+        ["Method", "Thread to HTML", "Manual Copy", "Screenshot"],
+        ["Speed", "< 1 second", "5-10 min", "Instant"],
+        ["Quality", "Perfect", "Good", "Perfect"],
+        ["Effort", "One click", "Manual work", "One click"],
+        ["Editable", "Yes", "Yes", "No"]
+      ]
+    },
+    {
+      view: "Use Case",
+      data: [
+        ["Use Case", "Thread to HTML", "Manual", "Screenshot"],
+        ["Blog Post", "Excellent", "Good", "Poor"],
+        ["Newsletter", "Excellent", "Fair", "Good"],
+        ["Documentation", "Excellent", "Poor", "Fair"],
+        ["Archive", "Excellent", "Fair", "Excellent"],
+        ["Accessibility", "Excellent", "Good", "Poor"]
+      ]
+    }
+  ],
+
   footer: {
     tagline: "Convert Threads to HTML. Free, Fast, Forever.",
     links: [

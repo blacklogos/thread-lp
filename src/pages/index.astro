@@ -5,7 +5,11 @@ import ProblemGrid from "../components/landing/ProblemGrid.astro";
 import FeatureGrid from "../components/landing/FeatureGrid.astro";
 import HowItWorks from "../components/landing/HowItWorks.astro";
 import UseCases from "../components/landing/UseCases.astro";
+import TechHighlights from "../components/landing/TechHighlights.astro";
+import Gallery from "../components/landing/Gallery.astro";
+import FeatureTabs from "../components/FeatureTabs";
 import ComparisonTable from "../components/landing/ComparisonTable.astro";
+import LivePreview from "../components/landing/LivePreview.astro";
 import SocialProof from "../components/landing/SocialProof.astro";
 import FAQ from "../components/landing/FAQ.astro";
 import FinalCTA from "../components/landing/FinalCTA.astro";
@@ -13,7 +17,7 @@ import Footer from "../components/landing/Footer.astro";
 import NewsletterForm from "../components/NewsletterForm";
 import { landingContent } from "../content/landing";
 
-const jsonLD = {
+const softwareAppSchema = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "Thread to HTML",
@@ -26,6 +30,19 @@ const jsonLD = {
     "priceCurrency": "USD"
   }
 };
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": landingContent.faq.map((item: any) => ({
+    "@type": "Question",
+    "name": item.question,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": item.answer
+    }
+  }))
+};
 ---
 
 <Layout>
@@ -34,7 +51,19 @@ const jsonLD = {
   <FeatureGrid content={landingContent.features} />
   <HowItWorks content={landingContent.howItWorks} />
   <UseCases content={landingContent.useCases} />
-  <ComparisonTable content={landingContent.comparison} />
+  <TechHighlights content={landingContent.techHighlights} />
+  <Gallery content={landingContent.gallery} />
+  
+  <section style="padding: 6rem 2rem; background: white;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h2 style="text-align: center; margin-bottom: 1rem;">{landingContent.featureTabs.title}</h2>
+      <p style="text-align: center; margin-bottom: 3rem; color: #65676b;">{landingContent.featureTabs.subtitle}</p>
+      <FeatureTabs tabs={landingContent.featureTabs.tabs} client:load />
+    </div>
+  </section>
+  
+  <ComparisonTable content={landingContent.comparison} comparisonViews={landingContent.comparisonViews} />
+  <LivePreview content={landingContent.livePreview} />
   <SocialProof content={landingContent.testimonials} />
   <FAQ content={landingContent.faq} />
   
@@ -49,5 +78,6 @@ const jsonLD = {
   <FinalCTA />
   <Footer content={landingContent.footer} />
   
-  <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(softwareAppSchema)} is:inline />
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
 </Layout>

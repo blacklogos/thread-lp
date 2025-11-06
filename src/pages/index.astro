@@ -3,9 +3,9 @@ import Layout from "../layouts/Layout.astro";
 import Hero from "../components/landing/Hero.astro";
 import ProblemGrid from "../components/landing/ProblemGrid.astro";
 import FeatureGrid from "../components/landing/FeatureGrid.astro";
+import WhatGetsSaved from "../components/landing/WhatGetsSaved.astro";
 import HowItWorks from "../components/landing/HowItWorks.astro";
 import UseCases from "../components/landing/UseCases.astro";
-import ComparisonTable from "../components/landing/ComparisonTable.astro";
 import SocialProof from "../components/landing/SocialProof.astro";
 import FAQ from "../components/landing/FAQ.astro";
 import FinalCTA from "../components/landing/FinalCTA.astro";
@@ -31,13 +31,13 @@ const jsonLD = {
   <Hero content={landingContent.hero} />
   <ProblemGrid content={landingContent.problems} />
   <FeatureGrid content={landingContent.features} />
+  <WhatGetsSaved content={landingContent.whatGetsSaved} />
   <HowItWorks content={landingContent.howItWorks} />
   <UseCases content={landingContent.useCases} />
-  <ComparisonTable content={landingContent.comparison} />
-  <SocialProof content={landingContent.testimonials} />
+  <SocialProof content={landingContent.socialProof} />
   <FAQ content={landingContent.faq} />
   <FinalCTA />
   <Footer content={landingContent.footer} />
-  
+
   <script type="application/ld+json" set:html={JSON.stringify(jsonLD)} is:inline />
 </Layout>

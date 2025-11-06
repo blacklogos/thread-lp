@@ -2,107 +2,25 @@
 const { content } = Astro.props;
 ---
 
-<section class="faq">
-  <div class="container">
-    <div class="header">
-      <h2>Frequently Asked Questions</h2>
-      <p>Everything you need to know about Thread to HTML</p>
+<section id="faq" class="py-24 px-6 lg:px-8">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-4xl lg:text-5xl font-display font-bold">Frequently Asked Questions</h2>
+      <p class="text-xl text-text-secondary">Everything you need to know about Thread to HTML</p>
     </div>
-    
-    <div class="faq-items">
+
+    <div class="space-y-4">
       {content.map((item: any, index: number) => (
-        <details class="faq-item" open={index === 0}>
-          <summary>{item.question}</summary>
-          <div class="answer">{item.answer}</div>
+        <details class="group bg-dark-surface/50 backdrop-blur-sm rounded-xl border border-dark-border overflow-hidden" open={index === 0}>
+          <summary class="flex items-center justify-between p-6 cursor-pointer hover:bg-dark-surface/80 transition-colors">
+            <span class="text-lg font-semibold pr-8">{item.question}</span>
+            <span class="text-threads-orange text-xl group-open:rotate-180 transition-transform">▼</span>
+          </summary>
+          <div class="px-6 pb-6 text-text-secondary leading-relaxed border-t border-dark-border pt-4">
+            {item.answer}
+          </div>
         </details>
       ))}
     </div>
   </div>
 </section>
-
-<style>
-  .faq {
-    padding: 6rem 2rem;
-    background: #f7f8fa;
-  }
-  
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  .header {
-    text-align: center;
-    margin-bottom: 4rem;
-  }
-  
-  .header h2 {
-    margin-bottom: 0.5rem;
-  }
-  
-  .header p {
-    font-size: 1.125rem;
-    color: #65676b;
-  }
-  
-  .faq-items {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  
-  .faq-item {
-    background: white;
-    border: 1px solid #e5e7eb;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  summary {
-    padding: 1.5rem;
-    cursor: pointer;
-    font-weight: 600;
-    user-select: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    transition: background 0.2s;
-  }
-  
-  summary:hover {
-    background: #f7f8fa;
-  }
-  
-  summary::after {
-    content: "▼";
-    font-size: 0.75rem;
-    transition: transform 0.2s;
-    transform-origin: center;
-  }
-  
-  details[open] summary::after {
-    transform: rotate(180deg);
-  }
-  
-  .answer {
-    padding: 0 1.5rem 1.5rem;
-    color: #65676b;
-    line-height: 1.6;
-    border-top: 1px solid #e5e7eb;
-  }
-  
-  @media (max-width: 768px) {
-    .faq {
-      padding: 4rem 1rem;
-    }
-    
-    summary {
-      padding: 1rem;
-      font-size: 0.95rem;
-    }
-    
-    .answer {
-      padding: 0 1rem 1rem;
-    }
-  }
-</style>

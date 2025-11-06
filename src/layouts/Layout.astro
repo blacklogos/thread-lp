@@ -7,19 +7,19 @@ interface Props {
 }
 
 const baseURL = Astro.site?.href || 'https://threadtohtml.com';
-const { title = "Thread to HTML - Convert Threads to Beautiful HTML", description = "Convert Twitter/X Threads to embeddable HTML instantly. Perfect for blogs, portfolios, and documentation.", image = "/og-image.png", canonicalURL = new URL(Astro.url.pathname, baseURL) } = Astro.props;
+const { title = "Never Lose a Great Threads Conversation Again", description = "Free Chrome extension to save and archive Threads posts. Read your favorite threads offline, anytime. Privacy-first. No signup required.", image = "/og-image.png", canonicalURL = new URL(Astro.url.pathname, baseURL) } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="generator" content={Astro.generator} />
-    
+
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#f7f8fa" />
+    <meta name="theme-color" content="#010101" />
     
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
@@ -37,167 +37,43 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
     
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    
-    <style is:global>
-      :root {
-        --primary: #0095f6;
-        --background: #f7f8fa;
-        --text-primary: #000;
-        --text-secondary: #65676b;
-        --border: #e5e7eb;
-        --shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-      }
-      
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      
-      html {
-        scroll-behavior: smooth;
-      }
-      
-      body {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", sans-serif;
-        color: var(--text-primary);
-        background: var(--background);
-        line-height: 1.6;
-      }
-      
-      h1, h2, h3, h4, h5, h6 {
-        font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-        font-weight: 700;
-      }
-      
-      h1 {
-        font-size: clamp(2rem, 5vw, 3.5rem);
-        line-height: 1.2;
-      }
-      
-      h2 {
-        font-size: clamp(1.5rem, 4vw, 2.5rem);
-        line-height: 1.3;
-      }
-      
-      h3 {
-        font-size: clamp(1.25rem, 3vw, 1.75rem);
-        line-height: 1.4;
-      }
-      
-      p {
-        font-size: clamp(1rem, 2vw, 1.125rem);
-        color: var(--text-secondary);
-      }
-      
-      code {
-        font-family: "JetBrains Mono", monospace;
-        background: #f0f2f5;
-        padding: 0.25rem 0.5rem;
-        border-radius: 4px;
-      }
-      
-      a {
-        color: var(--primary);
-        text-decoration: none;
-        transition: opacity 0.2s;
-      }
-      
-      a:hover {
-        opacity: 0.8;
-      }
-      
-      button, input, textarea, select {
-        font-family: inherit;
-      }
-    </style>
   </head>
-  <body>
-    <nav class="sticky-nav">
-      <div class="nav-container">
-        <a href="/" class="logo">Thread to HTML</a>
-        <div class="nav-links">
-          <a href="#how-it-works">How It Works</a>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
+  <body class="bg-dark-bg text-text-primary antialiased">
+    <!-- Gradient Background Effects -->
+    <div class="fixed inset-0 -z-10 overflow-hidden">
+      <div class="absolute top-0 left-1/4 w-96 h-96 bg-threads-orange/20 rounded-full blur-3xl"></div>
+      <div class="absolute top-1/3 right-1/4 w-96 h-96 bg-threads-yellow/20 rounded-full blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/2 w-96 h-96 bg-accent-cyan/10 rounded-full blur-3xl"></div>
+    </div>
+
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-dark-bg/80 backdrop-blur-xl border-b border-dark-border">
+      <div class="max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <a href="/" class="flex items-center gap-3 group">
+            <div class="w-8 h-8 bg-gradient-threads rounded-lg flex items-center justify-center shadow-glow group-hover:shadow-glow transition-shadow">
+              <span class="text-white font-bold text-lg">T</span>
+            </div>
+            <span class="font-display font-semibold text-lg">Thread to HTML</span>
+          </a>
+
+          <div class="hidden md:flex items-center gap-8">
+            <a href="#features" class="text-text-secondary hover:text-text-primary transition-colors">Features</a>
+            <a href="#how-it-works" class="text-text-secondary hover:text-text-primary transition-colors">How It Works</a>
+            <a href="#faq" class="text-text-secondary hover:text-text-primary transition-colors">FAQ</a>
+          </div>
+
+          <a href="https://chrome.google.com/webstore"
+             class="px-6 py-2.5 bg-gradient-threads text-white rounded-lg font-medium hover:shadow-glow transition-all duration-300 hover:scale-105"
+             target="_blank"
+             rel="noopener noreferrer">
+            Add to Chrome
+          </a>
         </div>
-        <a href="https://chrome.google.com/webstore" class="cta-button" target="_blank" rel="noopener noreferrer">
-          Add to Chrome
-        </a>
       </div>
     </nav>
-    
-    <main>
+
+    <main class="pt-16">
       <slot />
     </main>
-    
-    <style>
-      .sticky-nav {
-        position: sticky;
-        top: 0;
-        z-index: 100;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        border-bottom: 1px solid var(--border);
-        padding: 1rem 2rem;
-      }
-      
-      .nav-container {
-        max-width: 1200px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 2rem;
-      }
-      
-      .logo {
-        font-weight: 700;
-        font-size: 1.25rem;
-        color: var(--text-primary);
-      }
-      
-      .nav-links {
-        flex: 1;
-        display: flex;
-        gap: 2rem;
-        align-items: center;
-      }
-      
-      .nav-links a {
-        color: var(--text-secondary);
-        transition: color 0.2s;
-      }
-      
-      .nav-links a:hover {
-        color: var(--primary);
-      }
-      
-      .cta-button {
-        background: var(--primary);
-        color: white;
-        padding: 0.75rem 1.5rem;
-        border-radius: 8px;
-        font-weight: 600;
-        white-space: nowrap;
-        transition: all 0.2s;
-      }
-      
-      .cta-button:hover {
-        opacity: 0.9;
-        transform: translateY(-2px);
-      }
-      
-      @media (max-width: 768px) {
-        .nav-container {
-          gap: 1rem;
-          padding: 0.5rem;
-        }
-        
-        .nav-links {
-          display: none;
-        }
-      }
-    </style>
   </body>
 </html>

@@ -2,105 +2,31 @@
 const { content } = Astro.props;
 ---
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-content">
-      <div class="branding">
-        <h3>Thread to HTML</h3>
-        <p>{content.tagline}</p>
+<footer class="bg-dark-bg border-t border-dark-border">
+  <div class="max-w-7xl mx-auto px-6 lg:px-8 py-12">
+    <div class="grid md:grid-cols-2 gap-8 items-start mb-8">
+      <div class="space-y-3">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-gradient-threads rounded-lg flex items-center justify-center shadow-glow">
+            <span class="text-white font-bold text-xl">T</span>
+          </div>
+          <span class="font-display font-semibold text-xl">Thread to HTML</span>
+        </div>
+        <p class="text-text-muted text-sm">{content.tagline}</p>
+        <p class="text-text-muted text-sm">{content.disclaimer}</p>
       </div>
-      
-      <div class="links">
+
+      <div class="flex flex-wrap gap-6 md:justify-end">
         {content.links.map((link: any) => (
-          <a href={link.href}>{link.label}</a>
+          <a href={link.href} class="text-text-secondary hover:text-text-primary transition-colors text-sm">
+            {link.label}
+          </a>
         ))}
       </div>
     </div>
-    
-    <div class="divider"></div>
-    
-    <div class="copyright">
-      <p>&copy; 2025 Thread to HTML. All rights reserved.</p>
+
+    <div class="border-t border-dark-border pt-8 text-center text-text-muted text-sm">
+      <p>&copy; 2025 Thread to HTML. Built with Astro.</p>
     </div>
   </div>
 </footer>
-
-<style>
-  .footer {
-    background: #1a1a1a;
-    color: #e5e7eb;
-    padding: 4rem 2rem 2rem;
-  }
-  
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .footer-content {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 4rem;
-    align-items: start;
-    margin-bottom: 2rem;
-  }
-  
-  .branding h3 {
-    color: white;
-    margin-bottom: 0.5rem;
-  }
-  
-  .branding p {
-    color: #9ca3af;
-    font-size: 0.9rem;
-    margin: 0;
-  }
-  
-  .links {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-  }
-  
-  .links a {
-    color: #e5e7eb;
-    transition: color 0.2s;
-  }
-  
-  .links a:hover {
-    color: #0095f6;
-  }
-  
-  .divider {
-    height: 1px;
-    background: #374151;
-    margin-bottom: 2rem;
-  }
-  
-  .copyright {
-    text-align: center;
-  }
-  
-  .copyright p {
-    font-size: 0.85rem;
-    color: #9ca3af;
-    margin: 0;
-  }
-  
-  @media (max-width: 768px) {
-    .footer {
-      padding: 3rem 1rem 1rem;
-    }
-    
-    .footer-content {
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    
-    .links {
-      justify-content: flex-start;
-      gap: 1rem;
-    }
-  }
-</style>

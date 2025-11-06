@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/admin/Documents/thread-lp/docs/**)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)",
+      "Bash(npm run lint)",
+      "Bash(npm run dev)",
+      "Read(//Users/admin/Downloads/**)",
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

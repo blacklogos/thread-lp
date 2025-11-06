@@ -1,0 +1,38 @@
+---
+const { content } = Astro.props;
+---
+
+<section class="py-24 px-6 lg:px-8">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16 space-y-4">
+      <h2 class="text-4xl lg:text-5xl font-display font-bold">{content.title}</h2>
+      <p class="text-xl text-text-secondary max-w-2xl mx-auto">{content.subtitle}</p>
+    </div>
+
+    <div class="grid md:grid-cols-3 gap-8 mb-12">
+      {content.items.map((item: any) => (
+        <div class="bg-dark-surface/50 backdrop-blur-sm rounded-2xl p-8 border border-dark-border space-y-4">
+          <div class="text-5xl">{item.icon}</div>
+          <h3 class="text-2xl font-display font-semibold">{item.title}</h3>
+          <p class="text-text-secondary leading-relaxed">{item.description}</p>
+        </div>
+      ))}
+    </div>
+
+    {content.limitations && (
+      <div class="max-w-4xl mx-auto bg-dark-bg/50 backdrop-blur-sm rounded-2xl p-8 lg:p-12 border border-dark-border">
+        <h3 class="text-2xl font-display font-semibold mb-6 text-center">Honest About Limitations</h3>
+        <div class="space-y-4">
+          {content.limitations.map((limitation: any) => (
+            <div class="flex gap-3">
+              <span class="text-threads-yellow">→</span>
+              <p class="text-text-secondary">
+                <strong class="text-text-primary">{limitation.label}</strong> – {limitation.description}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>

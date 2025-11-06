@@ -7,11 +7,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "lint": "astro check",
+    "test": "astro check",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.5",
+    "@astrojs/react": "^4.4.1",
     "astro": "^5.15.3",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "typescript": "^5.9.3"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2"
   }
 }

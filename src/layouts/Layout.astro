@@ -38,6 +38,17 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     
+    <!-- Analytics -->
+    <script async is:inline src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX', {
+        page_path: window.location.pathname,
+      });
+    </script>
+    
     <style is:global>
       :root {
         --primary: #0095f6;
@@ -121,7 +132,7 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
           <a href="#features">Features</a>
           <a href="#pricing">Pricing</a>
         </div>
-        <a href="https://chrome.google.com/webstore" class="cta-button" target="_blank" rel="noopener noreferrer">
+        <a href="https://chrome.google.com/webstore" class="cta-button" target="_blank" rel="noopener noreferrer" data-track="cta-header">
           Add to Chrome
         </a>
       </div>
@@ -188,6 +199,10 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
         transform: translateY(-2px);
       }
       
+      [data-track] {
+        cursor: pointer;
+      }
+      
       @media (max-width: 768px) {
         .nav-container {
           gap: 1rem;
@@ -200,4 +215,37 @@ const { title = "Thread to HTML - Convert Threads to Beautiful HTML", descriptio
       }
     </style>
   </body>
+  
+  <script is:inline define:vars={{}}>
+    document.addEventListener('DOMContentLoaded', () => {
+      const trackableElements = document.querySelectorAll('[data-track]');
+      trackableElements.forEach(el => {
+        el.addEventListener('click', () => {
+          const trackId = el.getAttribute('data-track');
+          if (typeof window !== 'undefined' && window.gtag) {
+            window.gtag('event', 'click', {
+              category: 'cta',
+              label: trackId
+            });
+          }
+        });
+      });
+
+      // Track scroll depth
+      let maxScroll = 0;
+      window.addEventListener('scroll', () => {
+        const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+        if (scrollPercent > maxScroll) {
+          maxScroll = scrollPercent;
+          if (maxScroll % 25 === 0) {
+            if (typeof window !== 'undefined' && window.gtag) {
+              window.gtag('event', 'scroll_depth', {
+                value: maxScroll
+              });
+            }
+          }
+        }
+      });
+    });
+  </script>
 </html>

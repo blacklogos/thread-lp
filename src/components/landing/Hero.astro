@@ -8,10 +8,10 @@ const { content } = Astro.props;
     <p class="subheadline">{content.subheadline}</p>
     
     <div class="hero-ctas">
-      <a href="https://chrome.google.com/webstore" class="primary-cta" target="_blank" rel="noopener noreferrer">
+      <a href="https://chrome.google.com/webstore" class="primary-cta" target="_blank" rel="noopener noreferrer" data-track="cta-hero-primary">
         {content.cta}
       </a>
-      <a href="#how-it-works" class="secondary-cta">
+      <a href="#how-it-works" class="secondary-cta" data-track="cta-hero-secondary">
         {content.secondaryCTA}
       </a>
     </div>

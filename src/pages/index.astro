@@ -10,6 +10,7 @@ import SocialProof from "../components/landing/SocialProof.astro";
 import FAQ from "../components/landing/FAQ.astro";
 import FinalCTA from "../components/landing/FinalCTA.astro";
 import Footer from "../components/landing/Footer.astro";
+import NewsletterForm from "../components/NewsletterForm";
 import { landingContent } from "../content/landing";
 
 const jsonLD = {
@@ -36,6 +37,15 @@ const jsonLD = {
   <ComparisonTable content={landingContent.comparison} />
   <SocialProof content={landingContent.testimonials} />
   <FAQ content={landingContent.faq} />
+  
+  <section style="padding: 6rem 2rem; background: white; text-align: center;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2>Stay Updated</h2>
+      <p>Get the latest features and updates delivered to your inbox.</p>
+      <NewsletterForm client:load />
+    </div>
+  </section>
+  
   <FinalCTA />
   <Footer content={landingContent.footer} />
   

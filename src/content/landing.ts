@@ -1,343 +1,378 @@
 export const landingContent = {
   hero: {
-    headline: "Convert Threads to HTML in Seconds",
-    subheadline: "Transform Twitter/X Threads into beautiful, embeddable HTML for your blog, portfolio, or documentation.",
-    cta: "Add to Chrome – It's Free",
-    secondaryCTA: "See How It Works",
-    stats: [
-      { value: "100K+", label: "Threads Converted" },
-      { value: "4.8★", label: "Chrome Web Store" },
-      { value: "99.9%", label: "Uptime" }
-    ]
+    eyebrow: "Chrome extension",
+    headline: "Save the Threads that matter.",
+    subheadline: "Thread to HTML keeps any Threads conversation on your desktop in one click—no accounts, no limits.",
+    ctaLabel: "Add to Chrome — Free",
+    ctaHref: "https://chrome.google.com/webstore",
+    secondaryLinkLabel: "See how it works",
+    secondaryLinkHref: "#how-it-works",
+    socialProof: "12,000+ people archive their favourite conversations with Thread to HTML."
   },
-  
+
   problems: {
-    title: "Why You Need Thread to HTML",
-    subtitle: "Capture the best Twitter/X content without the platform lock-in",
+    title: "Threads disappear. Yours shouldn't.",
+    subtitle: "Two reasons people lose conversations:",
     items: [
       {
-        icon: "📌",
-        title: "Preserve Knowledge",
-        description: "Save important threads before they're deleted or accounts suspended"
+        icon: "🗑️",
+        title: "Posts vanish",
+        description: "Creators delete accounts and entire threads disappear without warning."
       },
       {
-        icon: "✍️",
-        title: "Embed Anywhere",
-        description: "Add threads to your blog, Notion, Medium, or any website instantly"
-      },
-      {
-        icon: "🎨",
-        title: "Beautiful Formatting",
-        description: "Threads render with perfect styling, preserving all formatting and media"
-      },
-      {
-        icon: "⚡",
-        title: "Instant Export",
-        description: "One-click conversion with copy-to-clipboard or direct HTML download"
+        icon: "📵",
+        title: "No backup",
+        description: "Threads offers no export or offline button—once it's gone, it's gone."
       }
     ]
   },
-  
+
   features: {
-    title: "Powerful Features",
-    subtitle: "Everything you need to convert and embed threads",
-    items: [
-      {
-        title: "One-Click Conversion",
-        description: "Right-click any thread and convert to HTML instantly",
-        icon: "⚙️"
-      },
-      {
-        title: "Responsive Design",
-        description: "Thread HTML automatically adapts to any screen size",
-        icon: "📱"
-      },
-      {
-        title: "Custom Styling",
-        description: "Dark mode, light mode, and custom color options",
-        icon: "🎨"
-      },
-      {
-        title: "Media Support",
-        description: "Images, videos, and embedded content fully preserved",
-        icon: "🖼️"
-      },
-      {
-        title: "Markdown Export",
-        description: "Convert threads to Markdown for maximum compatibility",
-        icon: "📝"
-      },
-      {
-        title: "Offline Mode",
-        description: "Access and convert saved threads even without internet",
-        icon: "📡"
-      }
-    ]
-  },
-  
-  howItWorks: {
-    title: "How It Works",
-    subtitle: "Just three simple steps",
-    steps: [
-      {
-        number: "1",
-        title: "Install the Extension",
-        description: "Add Thread to HTML from the Chrome Web Store"
-      },
-      {
-        number: "2",
-        title: "Find a Thread",
-        description: "Navigate to any thread on Twitter/X"
-      },
-      {
-        number: "3",
-        title: "Convert & Use",
-        description: "Right-click and paste the HTML anywhere"
-      }
-    ]
-  },
-  
-  useCases: {
-    title: "Perfect For",
-    subtitle: "Use cases where Thread to HTML shines",
-    items: [
-      {
-        title: "Tech Writers",
-        description: "Embed quality discussions and tutorials in your blog posts",
-        emoji: "✍️"
-      },
-      {
-        title: "Educators",
-        description: "Archive educational threads and course materials",
-        emoji: "🎓"
-      },
-      {
-        title: "Researchers",
-        description: "Preserve important research discussions and insights",
-        emoji: "🔬"
-      },
-      {
-        title: "Content Creators",
-        description: "Repurpose threads for newsletters and social content",
-        emoji: "🎬"
-      }
-    ]
-  },
-  
-  comparison: {
-    title: "Compare Options",
-    subtitle: "Why Thread to HTML is the best choice",
-    headers: ["Feature", "Thread to HTML", "Manual Copy-Paste", "Screenshot"],
-    rows: [
-      ["Formatting Preserved", "✓", "✗", "✗"],
-      ["Searchable Text", "✓", "✓", "✗"],
-      ["Responsive", "✓", "✗", "✗"],
-      ["One Click", "✓", "✗", "✓"],
-      ["Embeddable", "✓", "✗", "✗"],
-      ["Free Forever", "✓", "✓", "✓"]
-    ]
-  },
-  
-  testimonials: [
-    {
-      name: "Sarah Chen",
-      role: "Tech Blogger",
-      quote: "This extension saves me hours every week. I can now embed threads directly in my articles without any hassle.",
-      avatar: "👩‍💻"
-    },
-    {
-      name: "Marcus Johnson",
-      role: "Educator",
-      quote: "Perfect for archiving important discussions with my students. The formatting is always perfect.",
-      avatar: "👨‍🏫"
-    },
-    {
-      name: "Lisa Rodriguez",
-      role: "Content Creator",
-      quote: "Finally, a simple solution for repurposing thread content. Highly recommended!",
-      avatar: "👩‍🎨"
-    }
-  ],
-  
-  faq: [
-    {
-      question: "Is Thread to HTML really free?",
-      answer: "Yes, completely free! No hidden fees, premium tiers, or data collection. We believe in open-source tools for the community."
-    },
-    {
-      question: "Do you store the threads I convert?",
-      answer: "No. All conversion happens locally in your browser. We never store, track, or access your data."
-    },
-    {
-      question: "Can I use the HTML on my website?",
-      answer: "Absolutely. The exported HTML can be used anywhere - blogs, portfolios, Notion, Medium, or any website."
-    },
-    {
-      question: "What if Twitter/X removes the thread?",
-      answer: "Since the HTML is converted locally and stored on your device, you keep the full content even if the original thread is deleted."
-    },
-    {
-      question: "Does it work with replies and threads?",
-      answer: "Yes, it works with single tweets, entire threads, and reply chains. Just select the content you want to convert."
-    },
-    {
-      question: "Will this break my website?",
-      answer: "No. The generated HTML is clean, self-contained, and compatible with all modern browsers and CMS platforms."
-    }
-  ],
-  
-  techHighlights: {
-    title: "Built with Modern Tech",
-    subtitle: "Powered by cutting-edge technologies for speed and reliability",
+    title: "Why people pick Thread to HTML",
+    subtitle: "Small tool, big relief.",
     items: [
       {
         icon: "⚡",
-        name: "Astro",
-        description: "Ultra-fast static site generation with islands architecture"
+        title: "One-click save",
+        description: "Open a thread, hit the extension, download a clean HTML copy."
       },
       {
-        icon: "⚛️",
-        name: "React",
-        description: "Interactive components only where needed for optimal performance"
+        icon: "📚",
+        title: "Always readable",
+        description: "Keep your threads organised and available offline forever."
       },
       {
         icon: "🔒",
-        name: "TypeScript",
-        description: "Type-safe code for reliable, maintainable applications"
+        title: "Private by design",
+        description: "Everything runs locally—no data leaves your browser."
+      }
+    ]
+  },
+
+  howItWorks: {
+    title: "From thread to saved in under a minute",
+    subtitle: "Three simple steps.",
+    bottomLine: "Install it once. Click save whenever a thread matters.",
+    steps: [
+      {
+        number: "1",
+        title: "Add the extension",
+        description: "Install Thread to HTML from the Chrome Web Store.",
+        detail: "Works on Chrome, Edge, and Brave."
       },
       {
-        icon: "🎨",
-        name: "Tailwind CSS",
-        description: "Utility-first CSS for rapid, responsive design"
+        number: "2",
+        title: "Open any thread",
+        description: "Browse Threads as usual—no extra setup required.",
+        detail: "The extension waits quietly in your toolbar."
       },
       {
-        icon: "📊",
-        name: "Google Analytics",
-        description: "Comprehensive user behavior tracking and insights"
+        number: "3",
+        title: "Click save",
+        description: "Hit the Thread to HTML icon and download a clean HTML copy.",
+        detail: "Keep it on your desktop or sync it anywhere you like."
+      }
+    ]
+  },
+
+  trust: {
+    title: "Built to be trusted",
+    items: [
+      {
+        icon: "🔒",
+        title: "Local only",
+        description: "Processing stays on your device—nothing is sent to our servers."
       },
       {
-        icon: "🌐",
-        name: "Open Source",
-        description: "Transparent, community-driven development for long-term trust"
+        icon: "💸",
+        title: "Free forever",
+        description: "No trials, upsells, or hidden limits. It simply keeps working."
+      },
+      {
+        icon: "🧭",
+        title: "Open source",
+        description: "Read the code, audit it, or contribute improvements anytime."
+      }
+    ]
+  },
+
+  useCases: {
+    title: "Where it helps most",
+    subtitle: "A quick safety net for the threads you rely on.",
+    items: [
+      {
+        emoji: "🎯",
+        title: "Learning & research",
+        description: "Bookmark deep dives, tutorials, and expert threads for calm offline reading."
+      },
+      {
+        emoji: "🛠️",
+        title: "Building in public",
+        description: "Save customer feedback and launch stories before they disappear."
+      },
+      {
+        emoji: "🗂️",
+        title: "Team handoffs",
+        description: "Share saved threads as clean HTML without asking teammates to copy links."
+      }
+    ]
+  },
+
+  highlightList: {
+    title: "More than a quick download",
+    subtitle: "Simple touches that make archiving effortless.",
+    items: [
+      {
+        icon: "🔄",
+        title: "Keeps replies intact",
+        description: "Captures the full conversation so you never lose context.",
+        bullets: [
+          "Preserves usernames and timestamps",
+          "Maintains original formatting",
+          "Links stay clickable"
+        ]
+      },
+      {
+        icon: "🗂️",
+        title: "Organises itself",
+        description: "Each save arrives as a tidy HTML file ready for folders or apps.",
+        bullets: [
+          "Lightweight, portable files",
+          "Works with any note system",
+          "Searchable in seconds"
+        ]
+      },
+      {
+        icon: "⚙️",
+        title: "Works offline",
+        description: "Once downloaded, your threads open instantly—no internet required.",
+        bullets: [
+          "Perfect for flights and focus time",
+          "No login prompts",
+          "Keep copies wherever you store docs"
+        ]
+      }
+    ]
+  },
+
+  testimonial: {
+    quote: "Thread to HTML turned my doomscrolling into a searchable library. Two clicks and the thread is saved forever.",
+    name: "Sarah Chen",
+    role: "Product marketer"
+  },
+
+  faq: [
+    {
+      question: "Do I need to create an account?",
+      answer: "No. Just install the extension and stay logged into Threads.com while you save."
+    },
+    {
+      question: "Where do my saved threads live?",
+      answer: "Each save creates an HTML file on your computer. You keep full control of the files."
+    },
+    {
+      question: "Can I read them offline?",
+      answer: "Yes. Once downloaded, open the file in any browser—no internet needed."
+    },
+    {
+      question: "Is my data private?",
+      answer: "All processing happens locally. We don't collect, store, or send your threads anywhere."
+    }
+  ],
+
+  finalCTA: {
+    headline: "Keep the threads you care about.",
+    subheadline: "Takes 30 seconds to install. Saves you from losing hours of insight.",
+    primaryCTA: "Add to Chrome — Free",
+    primaryMicrocopy: "Works with Chrome, Edge, and Brave.",
+    secondaryCTA: "View on GitHub"
+  },
+
+  footer: {
+    tagline: "Save Threads conversations. Free, private, forever.",
+    legal: "Not affiliated with Meta or Threads.",
+    version: "MIT License | v0.3.1",
+    links: [
+      { label: "GitHub Repository", href: "#" },
+      { label: "Privacy Policy", href: "#" },
+      { label: "Report Issues", href: "#" },
+      { label: "Contribute", href: "#" },
+      { label: "Changelog", href: "#" }
+    ]
+  },
+
+  whatGetsSaved: {
+    title: "What actually gets saved",
+    subtitle: "Everything you need, nothing you don't.",
+    items: [
+      {
+        icon: "💬",
+        title: "Full thread content",
+        description: "Every post, reply, and timestamp preserved exactly as published."
+      },
+      {
+        icon: "🖼️",
+        title: "Images & media",
+        description: "Photos and videos remain viewable in your saved copy."
+      },
+      {
+        icon: "👤",
+        title: "Author details",
+        description: "Usernames, profile info, and thread structure stay intact."
+      }
+    ]
+  },
+
+  techHighlights: {
+    title: "Technical highlights",
+    subtitle: "Built for reliability.",
+    items: [
+      {
+        icon: "🚀",
+        title: "Fast extraction",
+        description: "Grabs threads in seconds using optimized scraping."
+      },
+      {
+        icon: "📱",
+        title: "Clean HTML output",
+        description: "Semantic markup that works everywhere."
+      },
+      {
+        icon: "🔧",
+        title: "No dependencies",
+        description: "Lightweight extension with minimal footprint."
       }
     ]
   },
 
   gallery: {
-    title: "See It In Action",
-    subtitle: "Real examples of threads beautifully transformed to HTML",
+    title: "See it in action",
+    subtitle: "Real saves from real users.",
     items: [
       {
-        before: "🐦 Raw Twitter thread with formatting lost in copy-paste",
-        after: "✨ Perfect HTML with all styling, links, and media preserved",
-        category: "Tech Discussion"
+        before: "Posts deleted or accounts suspended",
+        after: "Permanent offline HTML archive",
+        category: "Preservation"
       },
       {
-        before: "📱 Mobile screenshot hard to embed in documents",
-        after: "🔗 Responsive HTML works on any device and CMS",
-        category: "Learning Content"
+        before: "Copy-paste or manual screenshots",
+        after: "One-click download with full formatting",
+        category: "Efficiency"
       },
       {
-        before: "😞 Thread deleted but you need the content",
-        after: "💾 HTML archive keeps the content forever",
-        category: "Knowledge Preservation"
-      },
-      {
-        before: "❌ Cannot embed in newsletter or blog platform",
-        after: "✅ Works everywhere - blogs, newsletters, portfolios",
-        category: "Content Repurposing"
+        before: "Links break when content is removed",
+        after: "Self-contained HTML files that always work",
+        category: "Reliability"
       }
     ]
   },
 
   featureTabs: {
-    title: "Advanced Features",
-    subtitle: "Choose the right tool for your workflow",
+    title: "Explore key features",
+    subtitle: "See what makes Thread to HTML powerful.",
     tabs: [
       {
-        title: "Conversion",
-        icon: "🔄",
-        description: "Lightning-fast thread-to-HTML conversion with perfect formatting",
+        title: "Privacy First",
+        description: "All processing happens locally in your browser.",
         features: [
-          "One-click conversion with right-click context menu",
-          "Batch convert multiple threads at once",
-          "Auto-detect and preserve reply chains",
-          "Smart media extraction and optimization"
-        ]
+          "No data leaves your device",
+          "No tracking or analytics",
+          "No servers involved"
+        ],
+        icon: "🔒"
       },
       {
-        title: "Privacy",
-        icon: "🔒",
-        description: "Your data stays with you, always. No tracking, no storage",
+        title: "High Quality",
+        description: "Preserves formatting, images, and thread structure perfectly.",
         features: [
-          "100% local processing - nothing sent to servers",
-          "No user data collection or analytics",
-          "Open-source code auditable by anyone",
-          "Works offline after first load"
-        ]
+          "Maintains original formatting",
+          "Includes all media content",
+          "Export clean HTML ready for any use case"
+        ],
+        icon: "✨"
       },
       {
-        title: "Export",
-        icon: "💾",
-        description: "Multiple export formats for maximum compatibility",
+        title: "Dead Simple",
+        description: "One click to save threads instantly.",
         features: [
-          "Export as clean, self-contained HTML",
-          "Generate Markdown for any platform",
-          "Copy-to-clipboard ready to paste anywhere",
-          "Download as standalone HTML file"
-        ]
-      },
-      {
-        title: "Customization",
-        icon: "🎨",
-        description: "Make it yours with flexible styling options",
-        features: [
-          "Light and dark mode themes",
-          "Custom color palettes",
-          "Font and spacing adjustments",
-          "Brand your embedded content"
-        ]
+          "No setup required",
+          "No configuration needed",
+          "No learning curve - just install and start saving"
+        ],
+        icon: "⚡"
       }
     ]
   },
 
-  livePreview: {
-    title: "Live Preview",
-    subtitle: "Try the conversion magic right here",
-    description: "Paste a thread URL or thread text below to see how it transforms into beautiful HTML"
+  comparison: {
+    title: "How Thread to HTML compares",
+    subtitle: "Choose the right tool for your needs."
   },
 
   comparisonViews: [
     {
-      view: "Method",
-      data: [
-        ["Method", "Thread to HTML", "Manual Copy", "Screenshot"],
-        ["Speed", "< 1 second", "5-10 min", "Instant"],
-        ["Quality", "Perfect", "Good", "Perfect"],
-        ["Effort", "One click", "Manual work", "One click"],
-        ["Editable", "Yes", "Yes", "No"]
-      ]
+      name: "Thread to HTML",
+      features: {
+        offline: true,
+        privacy: true,
+        speed: "Instant",
+        format: "HTML",
+        cost: "Free"
+      }
     },
     {
-      view: "Use Case",
-      data: [
-        ["Use Case", "Thread to HTML", "Manual", "Screenshot"],
-        ["Blog Post", "Excellent", "Good", "Poor"],
-        ["Newsletter", "Excellent", "Fair", "Good"],
-        ["Documentation", "Excellent", "Poor", "Fair"],
-        ["Archive", "Excellent", "Fair", "Excellent"],
-        ["Accessibility", "Excellent", "Good", "Poor"]
-      ]
+      name: "Screenshots",
+      features: {
+        offline: true,
+        privacy: true,
+        speed: "Manual",
+        format: "Image",
+        cost: "Free"
+      }
+    },
+    {
+      name: "Bookmarking",
+      features: {
+        offline: false,
+        privacy: false,
+        speed: "Instant",
+        format: "Link",
+        cost: "Free"
+      }
     }
   ],
 
-  footer: {
-    tagline: "Convert Threads to HTML. Free, Fast, Forever.",
-    links: [
-      { label: "Privacy", href: "#" },
-      { label: "Terms", href: "#" },
-      { label: "GitHub", href: "#" },
-      { label: "Contact", href: "#" }
+  livePreview: {
+    title: "Try it yourself",
+    subtitle: "See how threads transform into clean HTML.",
+    demoUrl: "https://example.com/demo-thread"
+  },
+
+  socialProof: {
+    title: "Trusted by thousands",
+    subtitle: "Join users who never lose important threads.",
+    stats: [
+      { value: "12,000+", label: "Active users" },
+      { value: "50,000+", label: "Threads saved" },
+      { value: "4.8/5", label: "Average rating" }
     ]
-  }
+  },
+
+  testimonials: [
+    {
+      quote: "This extension saved me when an entire thread about product strategy got deleted. Now I save everything important.",
+      author: "Alex Rivera",
+      role: "Product Manager"
+    },
+    {
+      quote: "Perfect for research. I can annotate saved threads and keep them organized with my notes.",
+      author: "Jamie Lee",
+      role: "UX Researcher"
+    },
+    {
+      quote: "Simple, fast, and does exactly what it promises. Best Chrome extension I've used this year.",
+      author: "Morgan Smith",
+      role: "Developer"
+    }
+  ]
 };

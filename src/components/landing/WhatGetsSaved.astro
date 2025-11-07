@@ -1,0 +1,138 @@
+---
+const { content } = Astro.props;
+---
+
+<section id="what-gets-saved" class="what-gets-saved">
+  <div class="container">
+    <div class="header">
+      <h2>{content.title}</h2>
+      <p>{content.subtitle}</p>
+    </div>
+    
+    <div class="grid">
+      {content.items.map((item: any) => (
+        <div class="item">
+          <div class="icon">{item.icon}</div>
+          <h3>{item.title}</h3>
+          <p>{item.description}</p>
+        </div>
+      ))}
+    </div>
+
+    {content.limitations && (
+      <div class="limitations">
+        <h3>{content.limitations.title}</h3>
+        <div class="limitations-grid">
+          {content.limitations.items.map((limitation: any) => (
+            <div class="limitation">
+              <strong>{limitation.label}</strong> – {limitation.detail}
+            </div>
+          ))}
+        </div>
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .what-gets-saved {
+    padding: 6rem 2rem;
+    background: white;
+  }
+  
+  .container {
+    max-width: 1040px;
+    margin: 0 auto;
+  }
+  
+  .header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  
+  .header h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .header p {
+    font-size: 18px;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
+  }
+  
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .icon {
+    font-size: 3rem;
+    line-height: 1;
+    width: fit-content;
+  }
+  
+  .item h3 {
+    margin: 0;
+    color: var(--text-primary);
+  }
+  
+  .item p {
+    margin: 0;
+    font-size: 14px;
+    color: var(--text-secondary);
+  }
+
+  .limitations {
+    margin-top: 3rem;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 8px;
+  }
+
+  .limitations h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    color: var(--text-primary);
+  }
+
+  .limitations-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .limitation {
+    font-size: 14px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  .limitation strong {
+    color: var(--text-primary);
+  }
+  
+  @media (max-width: 768px) {
+    .what-gets-saved {
+      padding: 4rem 1rem;
+    }
+    
+    .grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .limitations {
+      padding: 1.5rem;
+    }
+  }
+</style>

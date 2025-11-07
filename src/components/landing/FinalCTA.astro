@@ -1,17 +1,23 @@
 ---
+const { content } = Astro.props;
 ---
 
 <section class="final-cta">
   <div class="container">
-    <h2>Ready to Convert Your Threads?</h2>
-    <p>Join thousands of creators who are already using Thread to HTML</p>
+    <h2>{content.headline}</h2>
+    <p>{content.subheadline}</p>
     
     <div class="ctas">
-      <a href="https://chrome.google.com/webstore" class="primary-cta" target="_blank" rel="noopener noreferrer" data-track="cta-final-primary">
-        Add to Chrome – It's Free
-      </a>
+      <div class="cta-wrapper">
+        <a href="https://chrome.google.com/webstore" class="primary-cta" target="_blank" rel="noopener noreferrer" data-track="cta-final-primary">
+          {content.primaryCTA}
+        </a>
+        {content.primaryMicrocopy && (
+          <p class="cta-microcopy">{content.primaryMicrocopy}</p>
+        )}
+      </div>
       <a href="https://github.com" class="secondary-cta" target="_blank" rel="noopener noreferrer" data-track="cta-final-github">
-        Star on GitHub
+        {content.secondaryCTA}
       </a>
     </div>
   </div>
@@ -20,7 +26,7 @@
 <style>
   .final-cta {
     padding: 6rem 2rem;
-    background: linear-gradient(135deg, #0095f6 0%, #0080d9 100%);
+    background: var(--orange-gradient);
     color: white;
     text-align: center;
   }
@@ -36,8 +42,8 @@
   }
   
   p {
-    font-size: 1.25rem;
-    color: rgba(255, 255, 255, 0.9);
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.95);
     margin-bottom: 2rem;
   }
   
@@ -46,27 +52,55 @@
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .cta-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    position: relative;
+    border: none;
+    outline: none;
+    background: transparent;
+  }
+
+  .cta-microcopy {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    font-style: italic;
   }
   
   .primary-cta, .secondary-cta {
-    padding: 1rem 2rem;
-    border-radius: 8px;
+    padding: 0.875rem 2rem;
+    border-radius: 28px;
     font-weight: 600;
-    font-size: 1rem;
+    font-size: 16px;
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
     white-space: nowrap;
+    outline: none;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .primary-cta:focus,
+  .secondary-cta:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 2px;
   }
   
   .primary-cta {
     background: white;
-    color: #0095f6;
+    color: var(--orange-dark);
   }
   
   .primary-cta:hover {
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
   }
   
   .secondary-cta {
@@ -76,7 +110,7 @@
   }
   
   .secondary-cta:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.15);
     transform: translateY(-2px);
   }
   
@@ -86,11 +120,11 @@
     }
     
     h2 {
-      font-size: 1.75rem;
+      font-size: 28px;
     }
     
     p {
-      font-size: 1rem;
+      font-size: 16px;
     }
     
     .ctas {
